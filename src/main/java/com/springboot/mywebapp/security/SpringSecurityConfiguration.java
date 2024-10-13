@@ -48,13 +48,12 @@ public class SpringSecurityConfiguration {
 			
 		//convert db users into spring security UserDetails
 		Function<String, String> encoder = input -> passwordEncoder().encode(input);
-		List<UserDetails> users = usersFromDB.stream()
-											  .map(userFromDB ->  User.builder().passwordEncoder(encoder)
+		List<UserDetails> users = usersFromDB.stream().map(userFromDB ->  User.builder().passwordEncoder(encoder)
 																	  .username(userFromDB.getUserName())
 																	  .password(userFromDB.getPassword())
 																	  .roles("USER","ADMIN")
 																	  .build())
-											  .collect(Collectors.toList());
+																	  .collect(Collectors.toList());
 		return new InMemoryUserDetailsManager(users);
 	}
 	
