@@ -7,7 +7,7 @@
 </head>
 <body>
 <jsp:include page="logout.jsp" />
-	<h1>Welcome ${name}</h1>
+	<h1>Welcome ${name} </h1>
 	
 	${NotTodoFound}
 	<form action="todo-list" method="POST">
