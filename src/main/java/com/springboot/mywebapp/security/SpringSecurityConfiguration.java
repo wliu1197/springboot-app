@@ -63,7 +63,7 @@ public class SpringSecurityConfiguration {
 	}
 	
 	//to fix 403 forbidden error (type=Forbidden, status=403)
-	//disable csrf
+	//disable csrf cross site request frogery to allow post and put request
 	//ensure all request are authenticated
 	//enabling use of frame in our application
 	@Bean
